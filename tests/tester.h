@@ -15,7 +15,7 @@
 # define FLAG3 "--error-exitcode=42"
 # define FLAG4 "--errors-for-leak-kinds=all"
 # define FLAG5 "--trace-children=yes"
-# define PROG "./cub3D"
+# define PROG "../cub3D"
 
 typedef struct s_result
 {
