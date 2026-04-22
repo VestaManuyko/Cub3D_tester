@@ -9,6 +9,14 @@
 # include <criterion/criterion.h>
 # include <stdio.h>
 
+# define VAL "valgrind"
+# define FLAG1 "--leak-check=full"
+# define FLAG2 "--quiet"
+# define FLAG3 "--error-exitcode=42"
+# define FLAG4 "--errors-for-leak-kinds=all"
+# define FLAG5 "--trace-children=yes"
+# define PROG "./cub3D"
+
 typedef struct s_result
 {
 	char	stderr[1024];

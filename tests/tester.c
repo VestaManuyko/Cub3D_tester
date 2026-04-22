@@ -1,13 +1,5 @@
 #include "tester.h"
 
-# define VAL "valgrind"
-# define FLAG1 "--leak-check=full"
-# define FLAG2 "--quiet"
-# define FLAG3 "--error-exitcode=42"
-# define FLAG4 "--errors-for-leak-kinds=all"
-# define FLAG5 "--trace-children=yes"
-# define PROG "./cub3D"
-
 t_result	run_cub3d(char **argv)
 {
 	t_result	res;
