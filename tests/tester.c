@@ -20,8 +20,11 @@ Test(invalid, wrong_xpm_extension)
 		cr_assert_fail("Exit code should not be 0 for errors");
 	else if (res.exit_code == 42)
 		cr_assert_fail("Valgrind detected leaks");
-	cr_assert(strncmp(res.stderr, "Error\n", 6) == 0,
-              "stderr does not start with 'Error\\n'");
+	if (strncmp(res.stderr, "valgrind", 8) == 0)
+		cr_assert_fail("Executable doesnt exist");
+	else
+		cr_assert(strncmp(res.stderr, "Error\n", 6) == 0,
+         	    "stderr does not start with 'Error\\n'");
 	printf("Test: wrong_xpm_extension passed ✅\n");
 }
 
@@ -35,7 +38,10 @@ Test(invalid, file_doesnt_exist)
 		cr_assert_fail("Exit code should not be 0 for errors");
 	else if (res.exit_code == 42)
 		cr_assert_fail("Valgrind detected leaks");
-	cr_assert(strncmp(res.stderr, "Error\n", 6) == 0,
+	if (strncmp(res.stderr, "valgrind", 8) == 0)
+		cr_assert_fail("Executable doesnt exist");
+	else
+		cr_assert(strncmp(res.stderr, "Error\n", 6) == 0,
               "stderr does not start with 'Error\\n'");
 	printf("Test: file_doesnt_exist passed ✅\n");
 }
@@ -50,7 +56,10 @@ Test(invalid, empty_file)
 		cr_assert_fail("Exit code should not be 0 for errors");
 	else if (res.exit_code == 42)
 		cr_assert_fail("Valgrind detected leaks");
-	cr_assert(strncmp(res.stderr, "Error\n", 6) == 0,
+	if (strncmp(res.stderr, "valgrind", 8) == 0)
+		cr_assert_fail("Executable doesnt exist");
+	else
+		cr_assert(strncmp(res.stderr, "Error\n", 6) == 0,
               "stderr does not start with 'Error\\n'");
 	printf("Test: empty_file passed ✅\n");
 }
@@ -65,7 +74,10 @@ Test(invalid, no_map)
 		cr_assert_fail("Exit code should not be 0 for errors");
 	else if (res.exit_code == 42)
 		cr_assert_fail("Valgrind detected leaks");
-	cr_assert(strncmp(res.stderr, "Error\n", 6) == 0,
+	if (strncmp(res.stderr, "valgrind", 8) == 0)
+		cr_assert_fail("Executable doesnt exist");
+	else
+		cr_assert(strncmp(res.stderr, "Error\n", 6) == 0,
               "stderr does not start with 'Error\\n'");
 	printf("Test: no_map passed ✅\n");
 }
@@ -80,7 +92,10 @@ Test(cub3d, wrong_extension_cubb)
 		cr_assert_fail("Exit code should not be 0 for errors");
 	else if (res.exit_code == 42)
 		cr_assert_fail("Valgrind detected leaks");
-	cr_assert(strncmp(res.stderr, "Error\n", 6) == 0,
+	if (strncmp(res.stderr, "valgrind", 8) == 0)
+		cr_assert_fail("Executable doesnt exist");
+	else
+		cr_assert(strncmp(res.stderr, "Error\n", 6) == 0,
               "stderr does not start with 'Error\\n'");
 	printf("Test: wrong_extension_cubb passed ✅\n");
 }
@@ -95,7 +110,10 @@ Test(invalid, no_args)
 		cr_assert_fail("Exit code should not be 0 for errors");
 	else if (res.exit_code == 42)
 		cr_assert_fail("Valgrind detected leaks");
-	cr_assert(strncmp(res.stderr, "Error\n", 6) == 0,
+	if (strncmp(res.stderr, "valgrind", 8) == 0)
+		cr_assert_fail("Executable doesnt exist");
+	else
+		cr_assert(strncmp(res.stderr, "Error\n", 6) == 0,
               "stderr does not start with 'Error\\n'");
 	printf("Test: no_args passed ✅\n");
 }
@@ -110,7 +128,10 @@ Test(invalid, empty_arg)
 		cr_assert_fail("Exit code should not be 0 for errors");
 	else if (res.exit_code == 42)
 		cr_assert_fail("Valgrind detected leaks");
-	cr_assert(strncmp(res.stderr, "Error\n", 6) == 0,
+	if (strncmp(res.stderr, "valgrind", 8) == 0)
+		cr_assert_fail("Executable doesnt exist");
+	else
+		cr_assert(strncmp(res.stderr, "Error\n", 6) == 0,
               "stderr does not start with 'Error\\n'");
 	printf("Test: empty_arg passed ✅\n");
 }
@@ -125,7 +146,10 @@ Test(invalid, hidden_file_in_folder)
 		cr_assert_fail("Exit code should not be 0 for errors");
 	else if (res.exit_code == 42)
 		cr_assert_fail("Valgrind detected leaks");
-	cr_assert(strncmp(res.stderr, "Error\n", 6) == 0,
+	if (strncmp(res.stderr, "valgrind", 8) == 0)
+		cr_assert_fail("Executable doesnt exist");
+	else
+		cr_assert(strncmp(res.stderr, "Error\n", 6) == 0,
               "stderr does not start with 'Error\\n'");
 	printf("Test: hidden_file_in_folder passed ✅\n");
 }
@@ -140,7 +164,10 @@ Test(invalid, hidden_file)
 		cr_assert_fail("Exit code should not be 0 for errors");
 	else if (res.exit_code == 42)
 		cr_assert_fail("Valgrind detected leaks");
-	cr_assert(strncmp(res.stderr, "Error\n", 6) == 0,
+	if (strncmp(res.stderr, "valgrind", 8) == 0)
+		cr_assert_fail("Executable doesnt exist");
+	else
+		cr_assert(strncmp(res.stderr, "Error\n", 6) == 0,
               "stderr does not start with 'Error\\n'");
 	printf("Test: hidden_file passed ✅\n");
 }
@@ -155,7 +182,10 @@ Test(invalid, empty_xpm_file)
 		cr_assert_fail("Exit code should not be 0 for errors");
 	else if (res.exit_code == 42)
 		cr_assert_fail("Valgrind detected leaks");
-	cr_assert(strncmp(res.stderr, "Error\n", 6) == 0,
+	if (strncmp(res.stderr, "valgrind", 8) == 0)
+		cr_assert_fail("Executable doesnt exist");
+	else
+		cr_assert(strncmp(res.stderr, "Error\n", 6) == 0,
               "stderr does not start with 'Error\\n'");
 	printf("Test: empty_xpm_file passed ✅\n");
 }
@@ -170,7 +200,10 @@ Test(invalid, linked_hidden_file_xpm)
 		cr_assert_fail("Exit code should not be 0 for errors");
 	else if (res.exit_code == 42)
 		cr_assert_fail("Valgrind detected leaks");
-	cr_assert(strncmp(res.stderr, "Error\n", 6) == 0,
+	if (strncmp(res.stderr, "valgrind", 8) == 0)
+		cr_assert_fail("Executable doesnt exist");
+	else
+		cr_assert(strncmp(res.stderr, "Error\n", 6) == 0,
               "stderr does not start with 'Error\\n'");
 	printf("Test: linked_hidden_file_xpm passed ✅\n");
 }
@@ -185,7 +218,10 @@ Test(invalid, invalid_char_in_map)
 		cr_assert_fail("Exit code should not be 0 for errors");
 	else if (res.exit_code == 42)
 		cr_assert_fail("Valgrind detected leaks");
-	cr_assert(strncmp(res.stderr, "Error\n", 6) == 0,
+	if (strncmp(res.stderr, "valgrind", 8) == 0)
+		cr_assert_fail("Executable doesnt exist");
+	else
+		cr_assert(strncmp(res.stderr, "Error\n", 6) == 0,
               "stderr does not start with 'Error\\n'");
 	printf("Test: invalid_char_in_map passed ✅\n");
 }
@@ -200,7 +236,10 @@ Test(invalid, wrong_extension_txt)
 		cr_assert_fail("Exit code should not be 0 for errors");
 	else if (res.exit_code == 42)
 		cr_assert_fail("Valgrind detected leaks");
-	cr_assert(strncmp(res.stderr, "Error\n", 6) == 0,
+	if (strncmp(res.stderr, "valgrind", 8) == 0)
+		cr_assert_fail("Executable doesnt exist");
+	else
+		cr_assert(strncmp(res.stderr, "Error\n", 6) == 0,
               "stderr does not start with 'Error\\n'");
 	printf("Test: wrong_extension_txt passed ✅\n");
 }
@@ -215,7 +254,10 @@ Test(invalid, misplaced_info)
 		cr_assert_fail("Exit code should not be 0 for errors");
 	else if (res.exit_code == 42)
 		cr_assert_fail("Valgrind detected leaks");
-	cr_assert(strncmp(res.stderr, "Error\n", 6) == 0,
+	if (strncmp(res.stderr, "valgrind", 8) == 0)
+		cr_assert_fail("Executable doesnt exist");
+	else
+		cr_assert(strncmp(res.stderr, "Error\n", 6) == 0,
               "stderr does not start with 'Error\\n'");
 	printf("Test: misplaced_info passed ✅\n");
 }
@@ -230,7 +272,10 @@ Test(invalid, missing_texture)
 		cr_assert_fail("Exit code should not be 0 for errors");
 	else if (res.exit_code == 42)
 		cr_assert_fail("Valgrind detected leaks");
-	cr_assert(strncmp(res.stderr, "Error\n", 6) == 0,
+	if (strncmp(res.stderr, "valgrind", 8) == 0)
+		cr_assert_fail("Executable doesnt exist");
+	else
+		cr_assert(strncmp(res.stderr, "Error\n", 6) == 0,
               "stderr does not start with 'Error\\n'");
 	printf("Test: missing_texture passed ✅\n");
 }
@@ -245,7 +290,10 @@ Test(invalid, only_map)
 		cr_assert_fail("Exit code should not be 0 for errors");
 	else if (res.exit_code == 42)
 		cr_assert_fail("Valgrind detected leaks");
-	cr_assert(strncmp(res.stderr, "Error\n", 6) == 0,
+	if (strncmp(res.stderr, "valgrind", 8) == 0)
+		cr_assert_fail("Executable doesnt exist");
+	else
+		cr_assert(strncmp(res.stderr, "Error\n", 6) == 0,
               "stderr does not start with 'Error\\n'");
 	printf("Test: only_map passed ✅\n");
 }
@@ -260,7 +308,10 @@ Test(invalid, player_out_of_map)
 		cr_assert_fail("Exit code should not be 0 for errors");
 	else if (res.exit_code == 42)
 		cr_assert_fail("Valgrind detected leaks");
-	cr_assert(strncmp(res.stderr, "Error\n", 6) == 0,
+	if (strncmp(res.stderr, "valgrind", 8) == 0)
+		cr_assert_fail("Executable doesnt exist");
+	else
+		cr_assert(strncmp(res.stderr, "Error\n", 6) == 0,
               "stderr does not start with 'Error\\n'");
 	printf("Test: player_out_of_map passed ✅\n");
 }
@@ -275,7 +326,10 @@ Test(invalid, random_content)
 		cr_assert_fail("Exit code should not be 0 for errors");
 	else if (res.exit_code == 42)
 		cr_assert_fail("Valgrind detected leaks");
-	cr_assert(strncmp(res.stderr, "Error\n", 6) == 0,
+	if (strncmp(res.stderr, "valgrind", 8) == 0)
+		cr_assert_fail("Executable doesnt exist");
+	else
+		cr_assert(strncmp(res.stderr, "Error\n", 6) == 0,
               "stderr does not start with 'Error\\n'");
 	printf("Test: random_content passed ✅\n");
 }
@@ -290,7 +344,10 @@ Test(invalid, space_in_colour)
 		cr_assert_fail("Exit code should not be 0 for errors");
 	else if (res.exit_code == 42)
 		cr_assert_fail("Valgrind detected leaks");
-	cr_assert(strncmp(res.stderr, "Error\n", 6) == 0,
+	if (strncmp(res.stderr, "valgrind", 8) == 0)
+		cr_assert_fail("Executable doesnt exist");
+	else
+		cr_assert(strncmp(res.stderr, "Error\n", 6) == 0,
               "stderr does not start with 'Error\\n'");
 	printf("Test: space_in_colour passed ✅\n");
 }
@@ -305,7 +362,10 @@ Test(invalid, space_in_map)
 		cr_assert_fail("Exit code should not be 0 for errors");
 	else if (res.exit_code == 42)
 		cr_assert_fail("Valgrind detected leaks");
-	cr_assert(strncmp(res.stderr, "Error\n", 6) == 0,
+	if (strncmp(res.stderr, "valgrind", 8) == 0)
+		cr_assert_fail("Executable doesnt exist");
+	else
+		cr_assert(strncmp(res.stderr, "Error\n", 6) == 0,
               "stderr does not start with 'Error\\n'");
 	printf("Test: space_in_map passed ✅\n");
 }
@@ -320,7 +380,10 @@ Test(invalid, multiple_maps)
 		cr_assert_fail("Exit code should not be 0 for errors");
 	else if (res.exit_code == 42)
 		cr_assert_fail("Valgrind detected leaks");
-	cr_assert(strncmp(res.stderr, "Error\n", 6) == 0,
+	if (strncmp(res.stderr, "valgrind", 8) == 0)
+		cr_assert_fail("Executable doesnt exist");
+	else
+		cr_assert(strncmp(res.stderr, "Error\n", 6) == 0,
               "stderr does not start with 'Error\\n'");
 	printf("Test: multiple_maps passed ✅\n");
 }
@@ -335,7 +398,10 @@ Test(invalid, random_word_arg)
 		cr_assert_fail("Exit code should not be 0 for errors");
 	else if (res.exit_code == 42)
 		cr_assert_fail("Valgrind detected leaks");
-	cr_assert(strncmp(res.stderr, "Error\n", 6) == 0,
+	if (strncmp(res.stderr, "valgrind", 8) == 0)
+		cr_assert_fail("Executable doesnt exist");
+	else
+		cr_assert(strncmp(res.stderr, "Error\n", 6) == 0,
               "stderr does not start with 'Error\\n'");
 	printf("Test: random_word_arg passed ✅\n");
 }
@@ -350,7 +416,10 @@ Test(invalid, multiple_map_args)
 		cr_assert_fail("Exit code should not be 0 for errors");
 	else if (res.exit_code == 42)
 		cr_assert_fail("Valgrind detected leaks");
-	cr_assert(strncmp(res.stderr, "Error\n", 6) == 0,
+	if (strncmp(res.stderr, "valgrind", 8) == 0)
+		cr_assert_fail("Executable doesnt exist");
+	else
+		cr_assert(strncmp(res.stderr, "Error\n", 6) == 0,
               "stderr does not start with 'Error\\n'");
 	printf("Test: multiple_map_args passed ✅\n");
 }
@@ -365,7 +434,10 @@ Test(invalid, multiple_map_args_in_one_arg)
 		cr_assert_fail("Exit code should not be 0 for errors");
 	else if (res.exit_code == 42)
 		cr_assert_fail("Valgrind detected leaks");
-	cr_assert(strncmp(res.stderr, "Error\n", 6) == 0,
+	if (strncmp(res.stderr, "valgrind", 8) == 0)
+		cr_assert_fail("Executable doesnt exist");
+	else
+		cr_assert(strncmp(res.stderr, "Error\n", 6) == 0,
               "stderr does not start with 'Error\\n'");
 	printf("Test: multiple_map_args_in_one_arg passed ✅\n");
 }
@@ -380,7 +452,10 @@ Test(invalid, spaces_in_xpm_file)
 		cr_assert_fail("Exit code should not be 0 for errors");
 	else if (res.exit_code == 42)
 		cr_assert_fail("Valgrind detected leaks");
-	cr_assert(strncmp(res.stderr, "Error\n", 6) == 0,
+	if (strncmp(res.stderr, "valgrind", 8) == 0)
+		cr_assert_fail("Executable doesnt exist");
+	else
+		cr_assert(strncmp(res.stderr, "Error\n", 6) == 0,
               "stderr does not start with 'Error\\n'");
 	printf("Test: spaces_in_xpm_file passed ✅\n");
 }
@@ -395,7 +470,10 @@ Test(invalid, extra_commas_in_colour)
 		cr_assert_fail("Exit code should not be 0 for errors");
 	else if (res.exit_code == 42)
 		cr_assert_fail("Valgrind detected leaks");
-	cr_assert(strncmp(res.stderr, "Error\n", 6) == 0,
+	if (strncmp(res.stderr, "valgrind", 8) == 0)
+		cr_assert_fail("Executable doesnt exist");
+	else
+		cr_assert(strncmp(res.stderr, "Error\n", 6) == 0,
               "stderr does not start with 'Error\\n'");
 	printf("Test: extra_commas_in_colour passed ✅\n");
 }
@@ -410,7 +488,10 @@ Test(invalid, out_of_range_rgb_value)
 		cr_assert_fail("Exit code should not be 0 for errors");
 	else if (res.exit_code == 42)
 		cr_assert_fail("Valgrind detected leaks");
-	cr_assert(strncmp(res.stderr, "Error\n", 6) == 0,
+	if (strncmp(res.stderr, "valgrind", 8) == 0)
+		cr_assert_fail("Executable doesnt exist");
+	else
+		cr_assert(strncmp(res.stderr, "Error\n", 6) == 0,
               "stderr does not start with 'Error\\n'");
 	printf("Test: out_of_range_rgb_value passed ✅\n");
 }
@@ -425,7 +506,10 @@ Test(invalid, empty_rgb_value)
 		cr_assert_fail("Exit code should not be 0 for errors");
 	else if (res.exit_code == 42)
 		cr_assert_fail("Valgrind detected leaks");
-	cr_assert(strncmp(res.stderr, "Error\n", 6) == 0,
+	if (strncmp(res.stderr, "valgrind", 8) == 0)
+		cr_assert_fail("Executable doesnt exist");
+	else
+		cr_assert(strncmp(res.stderr, "Error\n", 6) == 0,
               "stderr does not start with 'Error\\n'");
 	printf("Test: empty_rgb_value passed ✅\n");
 }
