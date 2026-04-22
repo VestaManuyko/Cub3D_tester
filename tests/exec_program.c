@@ -17,21 +17,18 @@ int	exec_program(t_result *res, char *const argv[])
 		close(fd[0]);
 		close(fd[1]);
 		execvp(argv[0], argv);
-		exit(5);
+		exit(255);
 	}
 	close(fd[1]);
 	waitpid(pid, &status, 0);
 	if (WIFEXITED(status))
 	{
 		res->exit_code = WEXITSTATUS(status);
-		if (res->exit_code == 5)
+		if (res->exit_code == 255)
 			return (close(fd[0]), -1);
 	}
 	else
-	{
-		res->exit_code = 128;
 		return (close(fd[0]), -1);
-	}
 	if (read(fd[0], res->stderr, sizeof(res->stderr)) == -1)
 		return (close(fd[0]), close(fd[1]), -1);
 	close(fd[0]);
