@@ -190,14 +190,14 @@ Test(invalid, space_in_colour)
 	printf("Test: space_in_colour passed ✅\n");
 }
 
-Test(invalid, space_in_map)
+Test(invalid, blank_line_in_map)
 {
 	t_result	res;
-	char *args[] = {"maps/invalid/space_in_map.cub", NULL};
+	char *args[] = {"maps/invalid/blank_line_in_map.cub", NULL};
 	res = run_cub3d(args);
 
 	check_invalid(res);
-	printf("Test: space_in_map passed ✅\n");
+	printf("Test: blank_line_in_map passed ✅\n");
 }
 
 Test(invalid, multiple_maps)
@@ -418,4 +418,34 @@ Test(invalid, less_rgb_values_in_colour)
 
 	check_invalid(res);
 	printf("Test: less_rgb_values_in_colour passed ✅\n");
+}
+
+Test(invalid, non_numeric_colour_component)
+{
+	t_result	res;
+	char *args[] = {"maps/invalid/non_numeric_colour_component.cub", NULL};
+	res = run_cub3d(args);
+
+	check_invalid(res);
+	printf("Test: non_numeric_colour_component passed ✅\n");
+}
+
+Test(invalid, double_texture)
+{
+	t_result	res;
+	char *args[] = {"maps/invalid/double_texture.cub", NULL};
+	res = run_cub3d(args);
+
+	check_invalid(res);
+	printf("Test: double_texture passed ✅\n");
+}
+
+Test(invalid, unknown_texture_identifier)
+{
+	t_result	res;
+	char *args[] = {"maps/invalid/unknown_texture_identifier.cub", NULL};
+	res = run_cub3d(args);
+
+	check_invalid(res);
+	printf("Test: unknown_texture_identifier passed ✅\n");
 }
