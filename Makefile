@@ -23,7 +23,17 @@ $(OBJ_DIR)/tests/%.o: tests/%.c
 $(TEST_NAME): $(TEST_OBJ)
 	@$(CC) $(TEST_OBJ) -o $(TEST_NAME) $(TEST_LIBS)
 
+test_valid: $(TEST_NAME)
+	@echo "Valid tests validation:"
+	@./$(TEST_NAME) --filter "valid/*"
+
+test_invalid: $(TEST_NAME)
+	@echo "Invalid tests validation:"
+	@./$(TEST_NAME) --filter "invalid/*"
+
 test: $(TEST_NAME)
+
+run: test_valid test_invalid
 
 clean:
 	@rm -f $(TEST_OBJ) $(TEST_DEP)
