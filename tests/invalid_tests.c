@@ -399,3 +399,23 @@ Test(invalid, missing_colour)
 	check_invalid(res);
 	printf("Test: missing_colour passed ✅\n");
 }
+
+Test(invalid, more_rgb_values_in_colour)
+{
+	t_result	res;
+	char *args[] = {"maps/invalid/more_rgb_values_in_colour.cub", NULL};
+	res = run_cub3d(args);
+
+	check_invalid(res);
+	printf("Test: more_rgb_values_in_colour passed ✅\n");
+}
+
+Test(invalid, less_rgb_values_in_colour)
+{
+	t_result	res;
+	char *args[] = {"maps/invalid/less_rgb_values_in_colour.cub", NULL};
+	res = run_cub3d(args);
+
+	check_invalid(res);
+	printf("Test: less_rgb_values_in_colour passed ✅\n");
+}
