@@ -43,11 +43,11 @@ make test
 If you want separated output of valid and invalid tests run \
 for valid:
 ```
-make test_valid
+make valid
 ```
 for invalid:
 ```
-make test_invalid
+make invalid
 ```
 
 Good luck with the project!

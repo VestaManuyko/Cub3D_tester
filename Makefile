@@ -24,11 +24,11 @@ $(TEST_NAME): $(TEST_OBJ)
 	@echo "Tester compiled"
 	@$(CC) $(TEST_OBJ) -o $(TEST_NAME) $(TEST_LIBS)
 
-test_valid: $(TEST_NAME)
+valid: $(TEST_NAME)
 	@echo "Valid tests validation:"
 	@./$(TEST_NAME) --filter "valid/*"
 
-test_invalid: $(TEST_NAME)
+invalid: $(TEST_NAME)
 	@echo "Invalid tests validation:"
 	@./$(TEST_NAME) --filter "invalid/*"
 
