@@ -1,9 +1,9 @@
 F 100,150,200
-NO ./textures/north.xpm
+NO ./textures/grass.xpm
 C 10,20,30
-EA ./textures/east.xpm
-SO ./textures/south.xpm
-WE ./textures/west.xpm
+WE ./textures/stone.xpm
+SO ./textures/metal.xpm
+EA ./textures/brick.xpm
 
 111111
 1E0001
