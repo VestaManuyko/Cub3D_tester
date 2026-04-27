@@ -360,12 +360,42 @@ Test(invalid, map_unclosed_on_bottom)
 	printf("Test: map_unclosed_on_bottom passed ✅\n");
 }
 
-Test(invalid, unclosed_map)
+Test(invalid, unclosed_map_edge_case)
 {
 	t_result	res;
-	char *args[] = {"maps/invalid/unclosed_map.cub", NULL};
+	char *args[] = {"maps/invalid/unclosed_map_edge_case.cub", NULL};
 	res = run_cub3d(args);
 
 	check_invalid(res);
-	printf("Test: unclosed_map passed ✅\n");
+	printf("Test: unclosed_map_edge_case passed ✅\n");
+}
+
+Test(invalid, map_unclosed_left)
+{
+	t_result	res;
+	char *args[] = {"maps/invalid/map_unclosed_left.cub", NULL};
+	res = run_cub3d(args);
+
+	check_invalid(res);
+	printf("Test: map_unclosed_left passed ✅\n");
+}
+
+Test(invalid, map_unclosed_right)
+{
+	t_result	res;
+	char *args[] = {"maps/invalid/map_unclosed_right.cub", NULL};
+	res = run_cub3d(args);
+
+	check_invalid(res);
+	printf("Test: map_unclosed_right passed ✅\n");
+}
+
+Test(invalid, missing_colour)
+{
+	t_result	res;
+	char *args[] = {"maps/invalid/missing_colour.cub", NULL};
+	res = run_cub3d(args);
+
+	check_invalid(res);
+	printf("Test: missing_colour passed ✅\n");
 }
