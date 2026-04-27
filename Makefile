@@ -21,6 +21,7 @@ $(OBJ_DIR)/tests/%.o: tests/%.c
 	@$(CC) $(TEST_CFLAGS) -c $< -o $@
 
 $(TEST_NAME): $(TEST_OBJ)
+	@echo "Tester compiled"
 	@$(CC) $(TEST_OBJ) -o $(TEST_NAME) $(TEST_LIBS)
 
 test_valid: $(TEST_NAME)
@@ -32,8 +33,6 @@ test_invalid: $(TEST_NAME)
 	@./$(TEST_NAME) --filter "invalid/*"
 
 test: $(TEST_NAME)
-
-run: test_valid test_invalid
 
 clean:
 	@rm -f $(TEST_OBJ) $(TEST_DEP)

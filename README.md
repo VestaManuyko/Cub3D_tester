@@ -32,8 +32,14 @@ git clone git@github.com:VestaManuyko/Cub3D_tester.git tester
 cd tester
 make test
 ```
-Now once the tester is created, just run:
+You can run all tests as:
 ```
 ./tester
 ```
+If you want separated output of valid and invalid tests run:
+```
+make run
+```
+This will first run valid tests and show the result and then run the invalid tests and show that result.
+
 Good luck with the project!
